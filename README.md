@@ -1,4 +1,5 @@
 # japanese-vocabulary-pronunciation-audio-DaDb
+
 Vendoring + Bundling of the japanese-vocabulary-pronunciation-audio to import into DaKanji
 
 ## Installation
@@ -18,7 +19,6 @@ uv run main.py
 ```
 
 After running this script the dictionaries will be availalbe in `./out`
-
 
 ## Original data
 
