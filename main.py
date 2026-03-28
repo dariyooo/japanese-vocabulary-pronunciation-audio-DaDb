@@ -5,6 +5,7 @@ from pathlib import Path
 
 
 TMP_DIR = Path("tmp")
+OUT_DIR = Path("out")
 AUDIO_PARENT_DIR = Path("vendoring") / "lib"
 AUDIO_FORMATS = [p.name for p in AUDIO_PARENT_DIR.iterdir() if p.is_dir()]
 DICTIONARY_NAME = "japanese-vocabulary-pronunciation-audio-master-{{AUDIO_FORMAT}}"
@@ -30,7 +31,11 @@ def write_index_file(target_dir : Path, dict_title : str):
 
 def copy_audio_files(target_dir : Path, source_dir : Path):
 
-    shutil.copytree(source_dir, target_dir / "audios", dirs_exist_ok=True)
+    shutil.copytree(
+        source_dir,
+        target_dir / "audios",
+        dirs_exist_ok=True
+    )
 
 def create_zip_file(target_dir : Path, dict_title : str):
 
@@ -47,12 +52,13 @@ def main():
     for audio_format in AUDIO_FORMATS:
         dict_title = DICTIONARY_NAME.replace("{{AUDIO_FORMAT}}", audio_format)
         source_dir = AUDIO_PARENT_DIR / audio_format
-        target_dir = TMP_DIR / dict_title
+        tmp_dir = TMP_DIR / dict_title
+        out_dir = OUT_DIR / dict_title
         
-        create_dict_dir(target_dir)
-        write_index_file(target_dir, dict_title)
-        copy_audio_files(target_dir, source_dir)
-        create_zip_file(target_dir, dict_title)
+        create_dict_dir(tmp_dir)
+        write_index_file(tmp_dir, dict_title)
+        copy_audio_files(tmp_dir, source_dir)
+        create_zip_file(out_dir, dict_title)
         
 
 if __name__ == "__main__":
