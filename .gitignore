@@ -208,3 +208,7 @@ __marimo__/
 
 # include vendored code
 !vendoring/lib/
+
+# keep tmp folder BUT NOT its content
+tmp/*
+!tmp/.gitkeep
