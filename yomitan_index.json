@@ -1,8 +1,8 @@
 {
-    "title": "japanese-vocabulary-pronunciation-audio-{{AUDIO_FORMAT}}",
+    "title": "{{DICT_TITLE}}",
     "format": 3,
     "isUpdatable": false,
-    "revision": "2026.03.28",
+    "revision": "{{REVISION}}",
     "author": "WaniKani (Tofugu)",
     "url": "https://github.com/tofugu/japanese-vocabulary-pronunciation-audio",
     "description": "This is mainly old vocabulary pronunciation audio from [WaniKani](https://www.wanikani.com). These are no longer available on WaniKani as they have been replaced with newer recordings.\n\nThe audio is a mix of the following voices:\n\n* Male, Japanese native, Tokyo accent, professional voice actor, professional recorded\n* Female, Japanese native, Kansai accent, amateur voice actor, amateur recorded\n\nPlease attribute to [Tofugu](https://www.tofugu.com) and [WaniKani](http://www.wanikani.com) per the [LICENSE](/LICENSE).",
